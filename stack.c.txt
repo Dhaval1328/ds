@@ -1,0 +1,112 @@
+#include <stdio.h>
+#define MAX 10
+
+int stack[MAX];
+int top = -1;
+
+void push(int val);
+int pop();
+int peek();
+void update(int i, int x);
+void display();
+
+int main()
+{
+    int op, val, x, i;
+
+    do {
+        printf("\n 1. Push");
+        printf("\n 2. Pop");
+        printf("\n 3. Peek");
+        printf("\n 4. Update");
+        printf("\n 5. Display");
+        printf("\n 6. Exit");
+        printf("\n Enter Your Choice: ");
+        scanf("%d", &op);
+
+        switch(op) {
+            case 1:
+                printf("\n Enter Value To Be Pushed: ");
+                scanf("%d", &val);
+                push(val);
+                break;
+            case 2:
+                x = pop();
+                if(x != -1) {
+                    printf("Popped Value is: %d\n", x);
+                }
+                break;
+            case 3:
+                x = peek();
+                if(x != -1) {
+                    printf("\n Topmost Value of Stack is: %d\n", x);
+                }
+                break;
+            case 4:
+                printf("\n Enter index to update: ");
+                scanf("%d", &i);
+                printf("\n Enter new value: ");
+                scanf("%d", &x);
+                update(i, x);
+                break;
+            case 5:
+                display();
+                break;
+            case 6:
+                printf("\n Exiting...\n");
+                break;
+            default:
+                printf("\n Invalid Choice!\n");
+        }
+    } while(op != 6);
+
+    return 0;
+}
+
+void push(int val) {
+    if(top == MAX-1) {
+        printf("Stack Overflow\n");
+        return;
+    }
+    top = top + 1;
+    stack[top] = val;
+}
+
+int pop() {
+    if(top == -1) {
+        printf("Stack Underflow\n");
+        return -1;
+    }
+    int val = stack[top];
+    top = top - 1;
+    return val;
+}
+
+int peek() {
+    if(top == -1) {
+        printf("Stack is Empty\n");
+        return -1;
+    }
+    return stack[top];
+}
+
+void update(int i, int x) {
+    if(top-i+1<=-1) {
+        printf("Invalid index\n");
+        return;
+    }
+    stack[top-i+1] = x;
+    printf("Value updated successfully\n");
+}
+
+void display() {
+    int i;
+    if(top == -1) {
+        printf("Stack is Empty\n");
+        return;
+    }
+    for(i = top; i >= 0; i--) {
+        printf("\n %d ", stack[i]);
+    }
+    printf("\n");
+}
