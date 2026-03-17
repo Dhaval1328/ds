@@ -11,7 +11,7 @@ void main()
     int op;
     do{
         printf("\n 1.Insert: ");
-        printf("\n 2.Delete:");
+        printf("\n 2.Delete: ");
         printf("\n 3.Display:");
         printf("\n 4.Exit:");
         printf("\n Enter Your Choice :");
