@@ -15,7 +15,7 @@ int main()
     int op, val, x, i;
 
     do {
-        printf("\n 1. Push");
+        printf("\n 1. Push ");
         printf("\n 2. Pop");
         printf("\n 3. Peek");
         printf("\n 4. Update");
