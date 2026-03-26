@@ -5,7 +5,7 @@
  *     struct ListNode *next ;
  * };
  */
-struct ListNode* reverseBetween(struct ListNode* head , int left, int right) {
+struct ListNode* reverseBetween(struct ListNode*   head , int left, int right) {
 
 
     struct ListNode *prev = NULL; last =head;
