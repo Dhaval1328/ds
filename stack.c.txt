@@ -7,7 +7,7 @@ int top = -1;
 void push(int val);
 int pop();
 int peek();
-void update(int i, int x);
+void update(int i, int x );
 void display();
 
 int main()
